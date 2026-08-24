@@ -1,78 +1,152 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Education Hub | Learn Smarter</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
   <header class="navbar">
 
     <div class="logo">
       🎓 <span>Education</span> Hub
     </div>
 
+
     <nav>
-      <a href="#home">Home</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#classes">Classes</a>
-      <a href="#features">Features</a>
-      <a href="maths.html">Maths Solver</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="#subjects">
+        Subjects
+      </a>
+
+      <a href="classes.html">
+        Classes
+      </a>
+
+      <a href="#features">
+        Features
+      </a>
+
+      <a href="maths.html">
+        Maths Solver
+      </a>
+
     </nav>
 
-    <button id="themeBtn" class="theme-btn" type="button">
+
+    <button
+      id="themeBtn"
+      class="theme-btn"
+      type="button"
+    >
       🌙
     </button>
 
   </header>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
   <main>
 
-    <section class="hero" id="home">
+
+    <!-- HERO -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
 
       <div class="hero-content">
+
 
         <div class="badge">
           🚀 Learn • Practice • Grow
         </div>
 
+
         <h1>
+
           Learning को
-          <span>Easy</span>
+
+          <span>
+            Easy
+          </span>
+
           बनाएं
+
         </h1>
 
+
         <p>
-          Maths, Science, English और Social Science
-          को आसान तरीके से सीखें।
-          Notes, Practice, Tricks और AI Learning
-          एक ही जगह।
+
+          Maths, Science, English और
+          Social Science को आसान तरीके
+          से सीखें।
+
+          Notes, Practice, Tricks और
+          Smart Learning एक ही जगह।
+
         </p>
+
 
         <div class="hero-buttons">
 
-          <a href="maths.html" class="primary-btn">
+
+          <a
+            href="maths.html"
+            class="primary-btn"
+          >
             🧮 Maths Solver
           </a>
 
-          <a href="#subjects" class="secondary-btn">
-            📚 Start Learning
+
+          <a
+            href="classes.html"
+            class="secondary-btn"
+          >
+            🎓 Choose Class
           </a>
 
+
         </div>
+
 
       </div>
 
 
+
       <div class="hero-visual">
+
 
         <div class="main-card">
 
@@ -80,54 +154,80 @@
             🧠
           </div>
 
+
           <h3>
             Smart Learning
           </h3>
 
+
           <p>
-            Concepts को simple तरीके से सीखें
-            और अपनी preparation बेहतर बनाएं।
+
+            Concepts को simple तरीके
+            से सीखें और अपनी
+            preparation बेहतर बनाएं।
+
           </p>
 
         </div>
+
 
         <div class="floating-card card-one">
           🧮 Maths
         </div>
 
+
         <div class="floating-card card-two">
           🔬 Science
         </div>
+
 
         <div class="floating-card card-three">
           📖 English
         </div>
 
+
       </div>
+
 
     </section>
 
 
-    <!-- SUBJECTS -->
 
-    <section class="section" id="subjects">
+    <!-- =========================
+         SUBJECTS
+    ========================== -->
+
+    <section
+      class="section"
+      id="subjects"
+    >
+
 
       <div class="section-heading">
 
-        <span>📚 SUBJECTS</span>
+        <span>
+          📚 SUBJECTS
+        </span>
+
 
         <h2>
           Choose Your Subject
         </h2>
 
+
         <p>
-          अपनी पसंद का subject चुनकर learning शुरू करें।
+          अपनी पसंद का subject चुनकर
+          learning शुरू करें।
         </p>
 
       </div>
 
 
+
       <div class="subject-grid">
+
+
+        <!-- MATHS -->
 
         <article class="subject-card">
 
@@ -135,23 +235,31 @@
             🧮
           </div>
 
+
           <h3>
             Mathematics
           </h3>
 
+
           <p>
-            Questions, formulas, solutions
-            और maths tricks।
+            Questions, formulas,
+            solutions और maths tricks।
           </p>
 
+
           <a href="maths.html">
+
             <button type="button">
               Learn Maths →
             </button>
+
           </a>
 
         </article>
 
+
+
+        <!-- SCIENCE -->
 
         <article class="subject-card">
 
@@ -159,21 +267,30 @@
             🔬
           </div>
 
+
           <h3>
             Science
           </h3>
 
+
           <p>
-            Physics, Chemistry और Biology
-            को आसान तरीके से सीखें।
+            Physics, Chemistry और
+            Biology को आसान तरीके से सीखें।
           </p>
 
-          <button type="button">
+
+          <button
+            type="button"
+            onclick="comingSoon('Science')"
+          >
             Learn Science →
           </button>
 
         </article>
 
+
+
+        <!-- ENGLISH -->
 
         <article class="subject-card">
 
@@ -181,21 +298,30 @@
             📖
           </div>
 
+
           <h3>
             English
           </h3>
+
 
           <p>
             Grammar, Vocabulary और
             communication skills।
           </p>
 
-          <button type="button">
+
+          <button
+            type="button"
+            onclick="comingSoon('English')"
+          >
             Learn English →
           </button>
 
         </article>
 
+
+
+        <!-- SST -->
 
         <article class="subject-card">
 
@@ -203,89 +329,197 @@
             🌍
           </div>
 
+
           <h3>
             Social Science
           </h3>
+
 
           <p>
             History, Geography, Civics
             और Economics।
           </p>
 
-          <button type="button">
+
+          <button
+            type="button"
+            onclick="comingSoon('Social Science')"
+          >
             Learn SST →
           </button>
 
         </article>
 
+
       </div>
+
 
     </section>
 
 
-    <!-- CLASSES -->
 
-    <section class="section" id="classes">
+    <!-- =========================
+         CLASSES
+    ========================== -->
+
+    <section
+      class="section"
+      id="classes"
+    >
+
 
       <div class="section-heading">
 
-        <span>🎓 CLASSES</span>
+        <span>
+          🎓 CLASSES
+        </span>
+
 
         <h2>
           Select Your Class
         </h2>
 
+
         <p>
-          अपनी class चुनकर पढ़ाई शुरू करें।
+          अपनी class चुनकर learning
+          शुरू करें।
         </p>
 
       </div>
 
 
+
       <div class="class-grid">
 
-        <button class="class-card" type="button">
-          <span>🧒</span>
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            🧒
+          </span>
+
           Class 1–5
-        </button>
 
-        <button class="class-card" type="button">
-          <span>📘</span>
+        </a>
+
+
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            📘
+          </span>
+
           Class 6–8
-        </button>
 
-        <button class="class-card" type="button">
-          <span>🎓</span>
+        </a>
+
+
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            🎓
+          </span>
+
           Class 9–10
-        </button>
 
-        <button class="class-card" type="button">
-          <span>🚀</span>
+        </a>
+
+
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            🚀
+          </span>
+
           Class 11–12
-        </button>
 
-        <button class="class-card" type="button">
-          <span>🏆</span>
+        </a>
+
+
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            🏆
+          </span>
+
           JEE
-        </button>
 
-        <button class="class-card" type="button">
-          <span>🩺</span>
+        </a>
+
+
+
+        <a
+          href="classes.html"
+          class="class-card"
+        >
+
+          <span>
+            🩺
+          </span>
+
           NEET
-        </button>
+
+        </a>
+
 
       </div>
+
+
+
+      <div
+        class="hero-buttons"
+        style="justify-content:center; margin-top:30px;"
+      >
+
+        <a
+          href="classes.html"
+          class="primary-btn"
+        >
+          View All Classes →
+        </a>
+
+      </div>
+
 
     </section>
 
 
-    <!-- FEATURES -->
 
-    <section class="section" id="features">
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section
+      class="section"
+      id="features"
+    >
+
 
       <div class="section-heading">
 
-        <span>✨ FEATURES</span>
+        <span>
+          ✨ FEATURES
+        </span>
+
 
         <h2>
           Everything You Need to Learn
@@ -294,15 +528,21 @@
       </div>
 
 
+
       <div class="feature-grid">
+
 
         <article class="feature-card">
 
-          <div>🤖</div>
+          <div>
+            🤖
+          </div>
+
 
           <h3>
             AI Learning
           </h3>
+
 
           <p>
             Questions को समझने और
@@ -312,13 +552,18 @@
         </article>
 
 
+
         <article class="feature-card">
 
-          <div>📝</div>
+          <div>
+            📝
+          </div>
+
 
           <h3>
             Notes
           </h3>
+
 
           <p>
             Important topics के
@@ -328,13 +573,18 @@
         </article>
 
 
+
         <article class="feature-card">
 
-          <div>💡</div>
+          <div>
+            💡
+          </div>
+
 
           <h3>
             Smart Tricks
           </h3>
+
 
           <p>
             कठिन questions को
@@ -344,13 +594,18 @@
         </article>
 
 
+
         <article class="feature-card">
 
-          <div>🎯</div>
+          <div>
+            🎯
+          </div>
+
 
           <h3>
             Quiz & Practice
           </h3>
+
 
           <p>
             Practice और quiz से
@@ -359,20 +614,27 @@
 
         </article>
 
+
       </div>
+
 
     </section>
 
 
-    <!-- CALL TO ACTION -->
+
+    <!-- =========================
+         CTA
+    ========================== -->
 
     <section class="cta">
+
 
       <div>
 
         <h2>
           आज से Learning शुरू करें 🚀
         </h2>
+
 
         <p>
           Learn more. Practice more.
@@ -381,35 +643,67 @@
 
       </div>
 
+
       <a href="maths.html">
         Try Maths Solver →
       </a>
 
+
     </section>
+
 
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
+
 
     <div class="footer-logo">
       🎓 Education Hub
     </div>
 
+
     <p>
       Learn • Practice • Grow
     </p>
+
 
     <p class="copyright">
       © 2026 Education Hub
     </p>
 
+
   </footer>
 
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script src="script.js"></script>
 
+
+  <script>
+
+    function comingSoon(subject) {
+
+      alert(
+        "📚 " +
+        subject +
+        " section जल्द उपलब्ध होगा!"
+      );
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
