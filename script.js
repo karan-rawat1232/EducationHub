@@ -1,71 +1,134 @@
-// Education Hub JavaScript
+// ========================================
+// EDUCATION HUB - MAIN JAVASCRIPT
+// ========================================
 
-const themeBtn = document.getElementById("themeBtn");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Dark Mode
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
+  // -------------------------------
+  // DARK MODE
+  // -------------------------------
 
-    document.body.classList.toggle("dark");
+  const themeBtn = document.getElementById("themeBtn");
 
-    const isDark =
-      document.body.classList.contains("dark");
+  const savedTheme =
+    localStorage.getItem("educationHubTheme");
 
-    themeBtn.textContent =
-      isDark ? "☀️" : "🌙";
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
 
-    localStorage.setItem(
-      "educationHubTheme",
-      isDark ? "dark" : "light"
-    );
-
-  });
-}
-
-
-// Load saved theme
-const savedTheme =
-  localStorage.getItem("educationHubTheme");
-
-if (savedTheme === "dark") {
-
-  document.body.classList.add("dark");
-
-  if (themeBtn) {
-    themeBtn.textContent = "☀️";
+    if (themeBtn) {
+      themeBtn.textContent = "☀️";
+    }
   }
 
-}
+  if (themeBtn) {
+
+    themeBtn.addEventListener("click", () => {
+
+      document.body.classList.toggle("dark");
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+      themeBtn.textContent =
+        isDark ? "☀️" : "🌙";
+
+      localStorage.setItem(
+        "educationHubTheme",
+        isDark ? "dark" : "light"
+      );
+
+    });
+
+  }
 
 
-// Subject buttons
-const subjectButtons =
-  document.querySelectorAll(".subject-card button");
+  // -------------------------------
+  // SUBJECT BUTTONS
+  // -------------------------------
 
-subjectButtons.forEach((button) => {
+  const subjectButtons =
+    document.querySelectorAll(".subject-card button");
 
-  button.addEventListener("click", () => {
+  subjectButtons.forEach((button) => {
 
-    alert(
-      "📚 यह subject section जल्द ही उपलब्ध होगा!"
-    );
+    button.addEventListener("click", () => {
+
+      const subject =
+        button.parentElement.querySelector("h3");
+
+      const subjectName =
+        subject ? subject.textContent.trim() : "Subject";
+
+      if (subjectName === "Mathematics") {
+
+        window.location.href = "maths.html";
+
+      } else {
+
+        alert(
+          `📚 ${subjectName} section जल्द उपलब्ध होगा!`
+        );
+
+      }
+
+    });
 
   });
 
-});
+
+  // -------------------------------
+  // CLASS BUTTONS
+  // -------------------------------
+
+  const classButtons =
+    document.querySelectorAll(".class-card");
+
+  classButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      const className =
+        button.textContent.trim();
+
+      alert(
+        `🎓 ${className} section जल्द उपलब्ध होगा!`
+      );
+
+    });
+
+  });
 
 
-// Class buttons
-const classButtons =
-  document.querySelectorAll(".class-card");
+  // -------------------------------
+  // SMOOTH NAVIGATION
+  // -------------------------------
 
-classButtons.forEach((button) => {
-
-  button.addEventListener("click", () => {
-
-    alert(
-      "🎓 यह class section जल्द ही उपलब्ध होगा!"
+  const navLinks =
+    document.querySelectorAll(
+      '.navbar nav a[href^="#"]'
     );
+
+  navLinks.forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+      const target =
+        document.querySelector(
+          link.getAttribute("href")
+        );
+
+      if (target) {
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+
+      }
+
+    });
 
   });
 
