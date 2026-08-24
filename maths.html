@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Maths Solver | Education Hub</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
 
+
 <body>
+
+
+  <!-- NAVBAR -->
 
   <header class="navbar">
 
@@ -18,43 +32,73 @@
     </div>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="maths.html">Maths</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="maths.html">
+        Maths
+      </a>
+
     </nav>
+
+    <button
+      id="themeBtn"
+      class="theme-btn"
+      type="button"
+    >
+      🌙
+    </button>
 
   </header>
 
+
+
+  <!-- MAIN -->
 
   <main>
 
     <section class="section">
 
+
       <div class="section-heading">
 
-        <span>🧮 MATHS SOLVER</span>
+        <span>
+          🧮 MATHS SOLVER
+        </span>
 
         <h1>
-          अपना Maths Question Solve करें
+          Maths Question Solve करें
         </h1>
 
         <p>
-          नीचे अपना question लिखें और solution देखें।
+          अपना question लिखें और
+          step-by-step solution पाएँ।
         </p>
 
       </div>
 
 
+
+      <!-- SOLVER BOX -->
+
       <div class="maths-box">
 
+
         <label for="mathQuestion">
-          ✏️ अपना Question लिखें
+
+          ✏️ अपना Maths Question लिखें
+
         </label>
+
 
         <textarea
           id="mathQuestion"
-          placeholder="Example: 2x + 5 = 15"
           rows="5"
+          placeholder="Example: 25 + 37"
         ></textarea>
+
 
 
         <button
@@ -62,9 +106,14 @@
           class="primary-btn"
           type="button"
         >
+
           🧮 Solve Question
+
         </button>
 
+
+
+        <!-- ANSWER -->
 
         <div
           id="answerBox"
@@ -72,22 +121,130 @@
         >
 
           <h3>
-            💡 Solution यहाँ दिखाई देगा
+            💡 Solution
           </h3>
 
           <p>
-            पहले अपना question लिखकर
+            Question लिखकर
             Solve Question दबाएँ।
           </p>
 
         </div>
 
+
       </div>
+
+
+
+      <!-- EXAMPLES -->
+
+      <div
+        class="section-heading"
+        style="margin-top:70px;"
+      >
+
+        <span>
+          💡 EXAMPLES
+        </span>
+
+        <h2>
+          Try These Questions
+        </h2>
+
+      </div>
+
+
+
+      <div class="class-grid">
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="25 + 37"
+        >
+
+          🧮
+          25 + 37
+
+        </button>
+
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="144 / 12"
+        >
+
+          ➗
+          144 ÷ 12
+
+        </button>
+
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="15 * 8"
+        >
+
+          ✖️
+          15 × 8
+
+        </button>
+
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="2x + 5 = 15"
+        >
+
+          🔢
+          2x + 5 = 15
+
+        </button>
+
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="20% of 500"
+        >
+
+          📊
+          20% of 500
+
+        </button>
+
+
+
+        <button
+          class="class-card example-question"
+          type="button"
+          data-question="100 - 45"
+        >
+
+          ➖
+          100 - 45
+
+        </button>
+
+
+      </div>
+
 
     </section>
 
   </main>
 
+
+
+  <!-- FOOTER -->
 
   <footer>
 
@@ -99,49 +256,235 @@
       Learn • Practice • Grow
     </p>
 
+    <p class="copyright">
+      © 2026 Education Hub
+    </p>
+
   </footer>
 
 
+
+  <!-- JAVASCRIPT -->
+
   <script>
 
-    const solveBtn =
-      document.getElementById("solveBtn");
+    // -----------------------------
+    // DARK MODE
+    // -----------------------------
+
+    const themeBtn =
+      document.getElementById("themeBtn");
+
+
+    const savedTheme =
+      localStorage.getItem(
+        "educationHubTheme"
+      );
+
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeBtn.textContent = "☀️";
+
+    }
+
+
+    themeBtn.addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.toggle(
+          "dark"
+        );
+
+
+        const isDark =
+          document.body.classList.contains(
+            "dark"
+          );
+
+
+        themeBtn.textContent =
+          isDark ? "☀️" : "🌙";
+
+
+        localStorage.setItem(
+          "educationHubTheme",
+          isDark ? "dark" : "light"
+        );
+
+      }
+    );
+
+
+
+    // -----------------------------
+    // ELEMENTS
+    // -----------------------------
 
     const questionInput =
-      document.getElementById("mathQuestion");
+      document.getElementById(
+        "mathQuestion"
+      );
+
+
+    const solveBtn =
+      document.getElementById(
+        "solveBtn"
+      );
+
 
     const answerBox =
-      document.getElementById("answerBox");
+      document.getElementById(
+        "answerBox"
+      );
 
 
-    solveBtn.addEventListener("click", function () {
+
+    // -----------------------------
+    // SOLVER FUNCTION
+    // -----------------------------
+
+    function solveQuestion() {
+
 
       const question =
         questionInput.value.trim();
 
 
-      if (question === "") {
+      if (!question) {
 
         answerBox.innerHTML = `
+
           <h3>⚠️ Question लिखिए</h3>
+
           <p>
-            पहले Maths question लिखें।
+            पहले कोई Maths question लिखें।
           </p>
+
         `;
 
         return;
+
       }
 
 
-      if (
-        question.includes("2x") &&
-        question.includes("5") &&
-        question.includes("15")
-      ) {
+
+      // -----------------------------
+      // LINEAR EQUATION
+      // Example: 2x + 5 = 15
+      // -----------------------------
+
+      const equation =
+        question
+          .replace(/\s/g, "")
+          .toLowerCase();
+
+
+      const match =
+        equation.match(
+          /^([+-]?\d+(?:\.\d+)?)x([+-]\d+(?:\.\d+)?)=([+-]?\d+(?:\.\d+)?)$/
+        );
+
+
+      if (match) {
+
+        const a =
+          Number(match[1]);
+
+        const b =
+          Number(match[2]);
+
+        const c =
+          Number(match[3]);
+
+
+        if (a !== 0) {
+
+          const x =
+            (c - b) / a;
+
+
+          answerBox.innerHTML = `
+
+            <h3>
+              ✅ Step-by-Step Solution
+            </h3>
+
+            <p>
+              <strong>Question:</strong>
+              ${question}
+            </p>
+
+            <br>
+
+            <p>
+              <strong>Step 1:</strong>
+              ${a}x ${b >= 0 ? "+" : ""}
+              ${b} = ${c}
+            </p>
+
+            <p>
+              <strong>Step 2:</strong>
+              ${a}x = ${c} - (${b})
+            </p>
+
+            <p>
+              <strong>Step 3:</strong>
+              ${a}x = ${c - b}
+            </p>
+
+            <p>
+              <strong>Step 4:</strong>
+              x = ${c - b} ÷ ${a}
+            </p>
+
+            <h2>
+              🎯 Final Answer:
+              x = ${x}
+            </h2>
+
+          `;
+
+          return;
+
+        }
+
+      }
+
+
+
+      // -----------------------------
+      // PERCENTAGE
+      // Example: 20% of 500
+      // -----------------------------
+
+      const percentage =
+        question.match(
+          /^(\d+(?:\.\d+)?)%\s*of\s*(\d+(?:\.\d+)?)$/i
+        );
+
+
+      if (percentage) {
+
+        const percent =
+          Number(percentage[1]);
+
+        const number =
+          Number(percentage[2]);
+
+
+        const answer =
+          (percent / 100) * number;
+
 
         answerBox.innerHTML = `
 
-          <h3>✅ Step-by-Step Solution</h3>
+          <h3>
+            ✅ Step-by-Step Solution
+          </h3>
 
           <p>
             <strong>Question:</strong>
@@ -152,68 +495,222 @@
 
           <p>
             <strong>Step 1:</strong>
-            2x + 5 = 15
+            ${percent}% = ${percent}/100
           </p>
 
           <p>
             <strong>Step 2:</strong>
-            2x = 15 - 5
-          </p>
-
-          <p>
-            <strong>Step 3:</strong>
-            2x = 10
-          </p>
-
-          <p>
-            <strong>Step 4:</strong>
-            x = 10 ÷ 2
+            ${percent}/100 × ${number}
           </p>
 
           <h2>
-            🎯 Final Answer: x = 5
+            🎯 Final Answer:
+            ${answer}
           </h2>
-
-          <p>
-            💡 Trick: पहले constant को दूसरी
-            side ले जाकर equation को simplify करें।
-          </p>
 
         `;
 
-      } else {
+        return;
+
+      }
+
+
+
+      // -----------------------------
+      // BASIC ARITHMETIC
+      // -----------------------------
+
+      const arithmetic =
+        question.match(
+          /^(-?\d+(?:\.\d+)?)\s*([+\-*/])\s*(-?\d+(?:\.\d+)?)$/
+        );
+
+
+      if (arithmetic) {
+
+        const num1 =
+          Number(arithmetic[1]);
+
+        const operator =
+          arithmetic[2];
+
+        const num2 =
+          Number(arithmetic[3]);
+
+
+        let answer;
+
+
+        if (
+          operator === "/" &&
+          num2 === 0
+        ) {
+
+          answerBox.innerHTML = `
+
+            <h3>⚠️ Error</h3>
+
+            <p>
+              किसी संख्या को 0 से divide
+              नहीं कर सकते।
+            </p>
+
+          `;
+
+          return;
+
+        }
+
+
+        switch (operator) {
+
+          case "+":
+
+            answer =
+              num1 + num2;
+
+            break;
+
+
+          case "-":
+
+            answer =
+              num1 - num2;
+
+            break;
+
+
+          case "*":
+
+            answer =
+              num1 * num2;
+
+            break;
+
+
+          case "/":
+
+            answer =
+              num1 / num2;
+
+            break;
+
+        }
+
 
         answerBox.innerHTML = `
 
-          <h3>🤖 Question Received</h3>
+          <h3>
+            ✅ Solution
+          </h3>
 
           <p>
-            आपका question:
-          </p>
-
-          <p>
-            <strong>${question}</strong>
+            <strong>Question:</strong>
+            ${question}
           </p>
 
           <br>
 
           <p>
-            अभी हमारा basic solver केवल demo
-            question के साथ काम कर रहा है।
+            <strong>Step 1:</strong>
+            ${num1} ${operator} ${num2}
           </p>
 
           <p>
-            🔜 आगे हम इसमें अलग-अलग Maths
-            questions solve करने की सुविधा जोड़ेंगे।
+            <strong>Step 2:</strong>
+            Calculate the operation
           </p>
+
+          <h2>
+            🎯 Final Answer:
+            ${answer}
+          </h2>
 
         `;
 
+        return;
+
       }
 
-    });
+
+
+      // -----------------------------
+      // UNKNOWN QUESTION
+      // -----------------------------
+
+      answerBox.innerHTML = `
+
+        <h3>
+          🤖 Question Received
+        </h3>
+
+        <p>
+          <strong>
+            ${question}
+          </strong>
+        </p>
+
+        <br>
+
+        <p>
+          यह question अभी हमारे basic
+          solver में supported नहीं है।
+        </p>
+
+        <p>
+          🔜 आगे हम इसमें और Maths topics
+          और AI solution जोड़ेंगे।
+        </p>
+
+      `;
+
+    }
+
+
+
+    // -----------------------------
+    // SOLVE BUTTON
+    // -----------------------------
+
+    solveBtn.addEventListener(
+      "click",
+      solveQuestion
+    );
+
+
+
+    // -----------------------------
+    // EXAMPLE QUESTIONS
+    // -----------------------------
+
+    const examples =
+      document.querySelectorAll(
+        ".example-question"
+      );
+
+
+    examples.forEach(
+      (example) => {
+
+        example.addEventListener(
+          "click",
+          () => {
+
+            questionInput.value =
+              example.dataset.question;
+
+            solveQuestion();
+
+          }
+        );
+
+      }
+    );
+
 
   </script>
 
+
 </body>
+
 </html>
